@@ -110,12 +110,6 @@ void setup()
   pinMode(LEDPIN, OUTPUT);
   Serial.begin(115200);
 
-  // Let's create the channel names based on the MAC address
-  unsigned char mac[6];
-  char macstr[7];
-  WiFi.macAddress(mac);
-  sprintf(macstr, "%02X%02X%02X", mac[3], mac[4], mac[5]);
-
   delay(500);
 
   Serial.println();
@@ -185,4 +179,5 @@ void loop()
 #ifdef NETWORK_UPDATE
   __netupdateServer.handleClient();
 #endif
+  delay(1000);
 }
